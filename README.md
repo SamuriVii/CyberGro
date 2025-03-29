@@ -1,75 +1,49 @@
-# Nuxt Minimal Starter
+# CyberGro 🛒⚡
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A cyberpunk-inspired futuristic e-commerce UI built with [Nuxt 3](https://nuxt.com/) and TailwindCSS.  
+Fully responsive, PWA-ready, and designed with a custom visual style resembling game HUD interfaces.
 
-## Setup
+CyberGro is an early-stage frontend mockup of a fictional marketplace, featuring:
 
-Make sure to install dependencies:
+- 💾 Cyberpunk-styled UI components
+- 🎯 Interactive buttons and navigation elements
+- 🔍 Custom search input with visual effects
+- 🔐 Placeholder login/account logic
+- 📱 Mobile-first layout with full responsiveness
+
+---
+
+## Features
+
+- ✅ Fully modular Nuxt 3 component structure
+- ✅ TailwindCSS + custom HUD styling
+- ✅ Cyberpunk-themed asset system (backgrounds, buttons, icons)
+- ✅ Accessible keyboard-friendly navigation
+- ✅ PWA-ready foundation (via `@vite-pwa/nuxt`)
+- ✅ Designed for easy expansion into a full app
+
+---
+
+## 🖼️ Assets & Licensing
+
+This project uses visual assets downloaded from [Vecteezy](https://www.vecteezy.com/), under their **Free License**.  
+Under this license, attribution is required. You must credit the authors by linking to:
+
+🔗 https://www.vecteezy.com/
+
+**Image credits**: All HUD-like UI elements and buttons are sourced from [Vecteezy.com](https://www.vecteezy.com/).  
+If you're using or modifying this project, please ensure that Vecteezy is credited unless you obtain a Pro License.
+
+More info: [Vecteezy Licensing Terms](https://support.vecteezy.com/hc/en-us/articles/360020576472-New-Vecteezy-Licensing)
+
+---
+
+## Project Setup
 
 ```bash
-# npm
+# Install dependencies
 npm install
+npm install -D tailwindcss postcss autoprefixer
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Run in development mode
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
