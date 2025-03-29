@@ -18,7 +18,6 @@
     <HomeSection title="Gwarancja najniższej ceny w Domu i ogrodzie" :products="produkty3" />
     <HomeSection title="Kupuj z szybką dostawą" :products="produkty4" />
 
-    <FooterArticles />
     <FooterMain />
   </div>
 </template>

@@ -73,7 +73,7 @@
     <hr class="my-6 mx-8 border-t border-[#ff413d] opacity-60" />
 
     <!-- Lower Section -->
-    <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-4 px-4">
+    <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-4 px-4 pb-6">
 
       <!-- Basic Buttons -->
       <div class="w-full lg:w-[80%] flex justify-center lg:justify-between flex-wrap items-center gap-2">
@@ -148,7 +148,6 @@
     </div>
   </header>
 </template>
-
 
 <script setup lang="ts">
 
