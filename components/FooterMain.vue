@@ -31,10 +31,10 @@
             Location Settings
           </h4>
           <ul class="space-y-1 text-yellow-200">
-            <li>Country: <span class="text-white font-semibold">Poland</span></li>
-            <li>Delivery: <span class="text-white font-semibold">Poland</span></li>
-            <li>Language: <span class="text-white font-semibold">Polish</span></li>
-            <li>Currency: <span class="text-white font-semibold">PLN</span></li>
+            <li>Country: <span class="text-white font-semibold"> USA</span></li>
+            <li>Delivery: <span class="text-white font-semibold">Night City</span></li>
+            <li>Language: <span class="text-white font-semibold">English</span></li>
+            <li>Currency: <span class="text-white font-semibold">$$$</span></li>
           </ul>
         </div>
       </div>

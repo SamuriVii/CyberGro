@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#1a1a1a] py-4">
     <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
-      <div class="flex justify-evenly overflow-hidden pt-2">
+      <div class="flex flex-col sm:flex-row items-center justify-evenly gap-4 pt-2 overflow-hidden">
 
         <!-- Categories -->
         <div
@@ -13,7 +13,7 @@
           <!-- Background -->
           <div
             class="w-[70px] h-[70px] bg-no-repeat bg-contain bg-center border-2 border-[#ff413d] rounded-full shadow-[0_0_6px_#ff413d] flex items-center justify-center"
-            :style="{ backgroundImage: `url('/images/${category.image}')` }"
+            :style="{ backgroundImage: `url('/${category.image}')` }"
           >
           </div>
 

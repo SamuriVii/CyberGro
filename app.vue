@@ -9,15 +9,15 @@
     <CategoryScroller :categories="categories" />
 
     <!-- Home Section 1 & 2 -->
-    <HomeSection title="Jak niskie ceny, to czas na wiosenne zakupy" :products="produkty1" />
-    <HomeSection title="Na czasie" :products="produkty2" />
+    <HomeSection title="Need a Vehicle? We'll Fit You With One!" :products="products_1" />
+    <HomeSection title="Militech Specials – Tactical Drones & Gear" :products="products_2" />
 
     <!-- Inspirations -->
     <InspirationBanner :items="inspirations" />
 
     <!-- Home Section 3 & 4 -->
-    <HomeSection title="Gwarancja najniższej ceny w Domu i ogrodzie" :products="produkty3" />
-    <HomeSection title="Kupuj z szybką dostawą" :products="produkty4" />
+    <HomeSection title="Neon-Infused Streetwear Drops" :products="products_3" />
+    <HomeSection title="Boost Your System – Top Rated Implants" :products="products_4" />
     
     <!-- Footer Section -->
     <FooterMain />
@@ -32,10 +32,10 @@
 
   // Categories
   const categories = [
-    { image: 'circle_red_1.png', label: 'Augmentations' },
-    { image: 'circle_red_2.png', label: 'Armor & Gear' },
-    { image: 'circle_red_3.png', label: 'Vehicles' },
-    { image: 'circle_red_4.png', label: 'Software Licenses' }
+    { image: 'images/circle_red_1.png', label: 'Augmentations' },
+    { image: 'images/circle_red_2.png', label: 'Armor & Gear' },
+    { image: 'images/circle_red_3.png', label: 'Vehicles' },
+    { image: 'images/circle_red_4.png', label: 'Software Licenses' }
   ]
 
   // Inspirations
@@ -49,35 +49,35 @@
   ]
 
   // Products
-  const produkty1 = [
-    { image: 'https://picsum.photos/seed/blender/180/180', name: 'Blender KitchenMix 2000', price: '368,89', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/koszyk/180/180', name: 'Koszyk wielkanocny z kwiatami', price: '65,00', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/baby/180/180', name: 'Ochraniacz dla dzieci CARIBOO', price: '79,90', delivery: 'w środę' },
-    { image: 'https://picsum.photos/seed/kosmetyki/180/180', name: 'Zestaw kosmetyków pielęgnacyjnych', price: '278,00', delivery: 'w poniedziałek' },
-    { image: 'https://picsum.photos/seed/grill/180/180', name: 'Grill ogrodowy RUSZTY', price: '329,00', delivery: 'we wtorek' },
+  const products_1 = [
+    { image: '/images/products/product_1_1.jpg', name: 'GhostRunner Hoverbike X9', price: '28499.00', delivery: 'delivers in 48h' },
+    { image: '/images/products/product_1_2.jpg', name: 'Neon Drift Cruiser GT', price: '31750.00', delivery: 'ready tomorrow' },
+    { image: '/images/products/product_1_3.jpg', name: 'Militech Armored Van C-Class', price: '44890.00', delivery: 'in 3 days' },
+    { image: '/images/products/product_1_4.jpg', name: 'Quadra Nightblade XT', price: '39999.00', delivery: 'available now' },
+    { image: '/images/products/product_1_5.jpg', name: 'UrbanCrawler Patrol Bike', price: '15490.00', delivery: 'in 24h' },
   ]
 
-  const produkty2 = [
-    { image: 'https://picsum.photos/seed/trawa/180/180', name: 'Trawa ogrodowa dekoracyjna', price: '5,99', delivery: 'w środę' },
-    { image: 'https://picsum.photos/seed/doniczka/180/180', name: 'Doniczka SMART', price: '12,47', delivery: 'jutro' },
-    { image: 'https://picsum.photos/seed/truskawka/180/180', name: 'Truskawka CAŁOROCZNA', price: '28,20', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/lampa/180/180', name: 'Lampa solarna LED ogród', price: '78,90', delivery: 'w 2 dni' },
+  const products_2 = [
+    { image: '/images/products/product_2_1.jpg', name: 'Recon Stealth Drone V4', price: '8420.00', delivery: 'delivers in 2 days' },
+    { image: '/images/products/product_2_2.jpg', name: 'Combat Bot SENTRY MkIII', price: '12999.00', delivery: 'tomorrow' },
+    { image: '/images/products/product_2_3.jpg', name: 'EMP Pulse Grenade x3 Pack', price: '760.00', delivery: 'in 24h' },
+    { image: '/images/products/product_2_4.jpg', name: 'Signal Jammer – CorpWave TX', price: '2699.00', delivery: 'in 2 days' },
   ]
 
-  const produkty3 = [
-    { image: 'https://picsum.photos/seed/trawa2/180/180', name: 'Trawa NASIONA SKG', price: '69,99', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/nawoz/180/180', name: 'Nawóz 20kg OBORNIK', price: '68,05', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/obuwie/180/180', name: 'Obuwie robocze NEO', price: '64,99', delivery: 'jutro' },
-    { image: 'https://picsum.photos/seed/kredki/180/180', name: 'Zestaw 100 kredek kolorowych', price: '59,90', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/ozdoba/180/180', name: 'Ozdoba do ogrodu – zestaw', price: '45,00', delivery: 'we wtorek' },
+  const products_3 = [
+    { image: '/images/products/product_3_1.jpg', name: 'Kevlar-Lined Hoodie X-Tek', price: '289.00', delivery: 'ready tomorrow' },
+    { image: '/images/products/product_3_2.jpg', name: 'Neon Visor Glasses 2077', price: '159.90', delivery: 'in 2 days' },
+    { image: '/images/products/product_3_3.jpg', name: 'AR Reactive Jacket – GhostBlack', price: '469.00', delivery: 'in 2 days' },
+    { image: '/images/products/product_3_4.jpg', name: 'CyberSneaks Pulse Vibe', price: '329.00', delivery: 'tomorrow' },
+    { image: '/images/products/product_3_5.jpg', name: 'DigitalCam Urban Mask', price: '122.00', delivery: 'in 3 days' },
   ]
 
-  const produkty4 = [
-    { image: 'https://picsum.photos/seed/garnek/180/180', name: 'Garnek ceramiczny TADAR', price: '128,90', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/kawa/180/180', name: 'Kawa Tchibo Exclusive 1kg', price: '25,90', delivery: 'jutro' },
-    { image: 'https://picsum.photos/seed/rower/180/180', name: 'Rower dziecięcy z kółkami', price: '549,00', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/fotelik/180/180', name: 'Fotelik samochodowy Summer Baby', price: '179,00', delivery: 'we wtorek' },
-    { image: 'https://picsum.photos/seed/buty/180/180', name: 'Buty sportowe Puma', price: '268,90', delivery: 'we wtorek' },
+  const products_4 = [
+    { image: '/images/products/product_4_1.jpg', name: 'Neural Boost Chip (Gen-5)', price: '899.00', delivery: 'ready now' },
+    { image: '/images/products/product_4_2.jpg', name: 'OcuScan Smart Optics', price: '1120.00', delivery: 'in 48h' },
+    { image: '/images/products/product_4_3.jpg', name: 'Kinetic Arm Servo – Titan-X', price: '2390.00', delivery: 'in 2 days' },
+    { image: '/images/products/product_4_4.jpg', name: 'Subdermal Armor Grid (Lv2)', price: '1780.00', delivery: 'tomorrow' },
+    { image: '/images/products/product_4_5.jpg', name: 'Memory Expander 128Tb XR', price: '655.00', delivery: 'in 3 days' },
   ]
 
  </script>
