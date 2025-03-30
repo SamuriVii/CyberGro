@@ -5,7 +5,7 @@
 
         <!-- Categories -->
         <div
-          v-for="(category, index) in staticCategories"
+          v-for="(category, index) in categories"
           :key="index"
           class="flex flex-col items-center min-w-[90px] cursor-pointer transform hover:scale-105 transition-all duration-300"
           >
@@ -14,7 +14,8 @@
           <div
             class="w-[70px] h-[70px] bg-no-repeat bg-contain bg-center border-2 border-[#ff413d] rounded-full shadow-[0_0_6px_#ff413d] flex items-center justify-center"
             :style="{ backgroundImage: `url('/images/${category.image}')` }"
-          ></div>
+          >
+          </div>
 
           <!-- Name -->
           <span class="mt-2 text-yellow-300 text-xs font-orbitron uppercase tracking-wide text-center">
@@ -27,12 +28,12 @@
 </template>
 
 <script setup lang="ts">
-  const staticCategories = [
-    { image: 'circle_red_1.png', label: 'Augmentations' },
-    { image: 'circle_red_2.png', label: 'Armor & Gear' },
-    { image: 'circle_red_3.png', label: 'Vehicles' },
-    { image: 'circle_red_4.png', label: 'Software Licenses' }
-  ]
+  const props = defineProps<{
+    categories: {
+      image: string
+      label: string
+    }[]
+  }>()
 </script>
 
 <style scoped>

@@ -1,28 +1,28 @@
 <template>
   <div data-atr="tenDiv">
     <NuxtRouteAnnouncer />
+    <!-- Navbar Section -->
     <Navbar/>
+    <!-- Banner Section -->
     <BasicSlider/>
-
-    <!-- Pasek kategorii -->
+    <!-- Categories Section -->
     <CategoryScroller :categories="categories" />
 
-    <!-- Sekcja 1 -->
+    <!-- Home Section 1 & 2 -->
     <HomeSection title="Jak niskie ceny, to czas na wiosenne zakupy" :products="produkty1" />
-
-    <!-- Sekcja 2 -->
     <HomeSection title="Na czasie" :products="produkty2" />
 
-    <!-- Sekcja z inspiracjami -->
-    <InspirationBanner :items="inspiracje" />
+    <!-- Inspirations -->
+    <InspirationBanner :items="inspirations" />
+
+    <!-- Home Section 3 & 4 -->
     <HomeSection title="Gwarancja najniższej ceny w Domu i ogrodzie" :products="produkty3" />
     <HomeSection title="Kupuj z szybką dostawą" :products="produkty4" />
-
+    
+    <!-- Footer Section -->
     <FooterMain />
   </div>
 </template>
-
-
 
 <script setup lang="ts">
 
@@ -30,16 +30,25 @@
   import BasicSlider from "~/components/BasicSlider.vue";
 
 
-  // Kategorie
+  // Categories
   const categories = [
-    { image: 'https://placehold.co/80x80?text=Wiosna', label: 'Hity na wiosnę' },
-    { image: 'https://placehold.co/80x80?text=Kwiaty', label: 'Florystyka' },
-    { image: 'https://placehold.co/80x80?text=Sport', label: 'Buty sportowe' },
-    { image: 'https://placehold.co/80x80?text=Moda', label: 'Moda' },
-    { image: 'https://placehold.co/80x80?text=Auto', label: 'Motoryzacja' },
+    { image: 'circle_red_1.png', label: 'Augmentations' },
+    { image: 'circle_red_2.png', label: 'Armor & Gear' },
+    { image: 'circle_red_3.png', label: 'Vehicles' },
+    { image: 'circle_red_4.png', label: 'Software Licenses' }
   ]
 
-  // Produkty
+  // Inspirations
+  const inspirations = [
+    { image: '/images/inspirations/inspiration_1.jpg', title: 'Neural Enhancements' },
+    { image: '/images/inspirations/inspiration_2.jpg', title: 'Reactive Armor Wear' },
+    { image: '/images/inspirations/inspiration_3.jpg', title: 'Cyber Streetwear' },
+    { image: '/images/inspirations/inspiration_4.jpg', title: 'Military Grade Implants' },
+    { image: '/images/inspirations/inspiration_5.jpg', title: 'Combat Drones' },
+    { image: '/images/inspirations/inspiration_6.jpg', title: 'Neon Cruisers' },
+  ]
+
+  // Products
   const produkty1 = [
     { image: 'https://picsum.photos/seed/blender/180/180', name: 'Blender KitchenMix 2000', price: '368,89', delivery: 'we wtorek' },
     { image: 'https://picsum.photos/seed/koszyk/180/180', name: 'Koszyk wielkanocny z kwiatami', price: '65,00', delivery: 'we wtorek' },
@@ -69,16 +78,6 @@
     { image: 'https://picsum.photos/seed/rower/180/180', name: 'Rower dziecięcy z kółkami', price: '549,00', delivery: 'we wtorek' },
     { image: 'https://picsum.photos/seed/fotelik/180/180', name: 'Fotelik samochodowy Summer Baby', price: '179,00', delivery: 'we wtorek' },
     { image: 'https://picsum.photos/seed/buty/180/180', name: 'Buty sportowe Puma', price: '268,90', delivery: 'we wtorek' },
-  ]
-
-  // Inspiracje
-  const inspiracje = [
-    { image: 'https://picsum.photos/seed/moda1/300/200', title: 'Galanteria i dodatki męskie' },
-    { image: 'https://picsum.photos/seed/slub/300/200', title: 'Ślub i wesele' },
-    { image: 'https://picsum.photos/seed/bielizna/300/200', title: 'Bielizna damska' },
-    { image: 'https://picsum.photos/seed/bagaz/300/200', title: 'Bagaż' },
-    { image: 'https://picsum.photos/seed/odziez/300/200', title: 'Odzież męska' },
-    { image: 'https://picsum.photos/seed/extra/300/200', title: 'Styl casual' },
   ]
 
  </script>
