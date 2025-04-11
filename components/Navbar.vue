@@ -6,19 +6,21 @@
  
       <!-- Logo -->
       <div class="w-full lg:w-auto flex justify-center lg:justify-start items-center h-full">
-        <img
-          src="/images/logo.png"
-          alt="CyberGro Logo"
-          class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
-        />
+          <router-link to="/" class="block">
+          <img
+            src="/images/logo.png"
+            alt="CyberGro Logo"
+            class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
+          />
+        </router-link>
       </div>
 
       <!-- Search bar -->
-      <div class="flex flex-col sm:flex-row flex-grow w-full lg:max-w-3xl gap-2 items-center">
-
+      <form @submit.prevent="handleSearch" class="flex flex-col sm:flex-row flex-grow w-full lg:max-w-3xl gap-2 items-center">
         <!-- Search input -->
         <div class="relative w-full">
           <input
+            v-model="searchQuery"
             type="text"
             placeholder="What are you looking for?"
             class="w-full h-[50px] bg-[#1a1a1a] text-yellow-300 placeholder-[#ff413d] px-4 text-sm rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-[#ff413d] hover:ring-2 hover:ring-[#ff413d] drop-shadow-md transition-all duration-300 ease-in-out"
@@ -42,17 +44,19 @@
         </select>
 
         <!-- Search button -->
-        <button class="inline-block transform hover:scale-105 transition" aria-label="Szukaj">
-          <img
-            src="/images/button_red_empty.png"
-            alt="Szukaj"
-            class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
-          />
-          <span class="absolute inset-0 flex items-center justify-center text-yellow-300 font-bold text-sm uppercase tracking-wide">
+        <button @click="handleSearch" class="relative inline-block transform hover:scale-105 transition" aria-label="Szukaj">
+          <div class="relative">
+            <img
+              src="/images/button_red_empty.png"
+              alt="Szukaj"
+              class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
+            />
+            <span class="absolute inset-0 flex items-center justify-center text-yellow-300 font-bold text-sm uppercase tracking-wide z-10">
               Search
-          </span>
+            </span>
+          </div>
         </button>
-      </div>
+      </form>
 
       <!-- My Account Button -->
       <div class="w-full lg:w-auto flex justify-center lg:justify-end">
@@ -150,7 +154,17 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+const searchQuery = ref('')
+
+const handleSearch = () => {
+  if (searchQuery.value.trim().length > 0) {
+    router.push({ path: '/search', query: { q: searchQuery.value } })
+  }
+}
 </script>
 
 <style scoped>
