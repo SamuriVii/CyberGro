@@ -154,23 +154,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+  import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
 
-const router = useRouter()
-const searchQuery = ref('')
+  const router = useRouter()
+  const searchQuery = ref('')
 
-const handleSearch = () => {
-  if (searchQuery.value.trim().length > 0) {
-    router.push({ path: '/search', query: { q: searchQuery.value } })
+  const handleSearch = () => {
+    if (searchQuery.value.trim().length > 0) {
+      router.push({ path: '/search', query: { q: searchQuery.value } })
+    }
   }
-}
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
 
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
-}
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
 </style>
