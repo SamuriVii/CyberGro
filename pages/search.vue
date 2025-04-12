@@ -1,7 +1,7 @@
 <template>
   <div class="px-6 py-8 bg-[#1a1a1a] text-white">
     <div v-if="filteredProducts.length" class="space-y-6">
-      <div v-for="(product, index) in filteredProducts" :key="index"
+      <div v-for="(product, index) in filteredProducts" :key="index" @click="goToProduct(product.slug)"
         class="w-[96%] mx-auto bg-[#1a1a1a] p-4 rounded-lg shadow-md border border-[#ff413d] 
                transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_0_10px_#ff413d] 
                group cursor-pointer"
@@ -21,24 +21,24 @@
           </div>
 
           <!-- RIGHT SIDE: buttons -->
-          <div class="flex flex-col sm:flex-col gap-3 sm:items-center">
-            <button class="relative inline-block transform hover:scale-105 transition" aria-label="Account">
-              <img
-                src="/images/button_red_empty.png"
-                alt="Buy"
-                class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
-              />
-              <span class="absolute inset-0 flex items-center justify-center text-[#ff413d] font-bold text-3xl leading-none">
-                ♡
-              </span>
+          <div class="flex flex-col gap-3 items-center pt-4">
+            <button class="relative inline-block transform hover:scale-105 transition w-[160px]" aria-label="Add to Wishlist">
+                <img
+                    src="/images/button_red_empty.png"
+                    alt="Wishlist"
+                    class="block w-full h-[48px]"
+                />
+                <span class="absolute inset-0 flex items-center justify-center text-[#ff413d] font-bold text-2xl leading-none">
+                    ♡
+                </span>
             </button>
-
-            <button class="relative inline-block transform hover:scale-105 transition" aria-label="Account">
-              <img
-                src="/images/button_red_buy.png"
-                alt="Buy"
-                class="block w-auto h-[52px] sm:h-[48px] md:h-[46px] lg:h-[44px]"
-              />
+  
+            <button class="relative inline-block transform hover:scale-105 transition w-[160px]" aria-label="Add to Cart">
+                <img
+                    src="/images/button_red_buy.png"
+                    alt="Buy"
+                    class="block w-full h-[48px]"
+                />
             </button>
           </div>
         </div>
@@ -68,5 +68,10 @@
       product.name.toLowerCase().includes(searchQuery.value)
     )
   )
+
+  const router = useRouter()
+  const goToProduct = (slug: string) => {
+    router.push(`/product/${slug}`)
+  }
 </script>
   

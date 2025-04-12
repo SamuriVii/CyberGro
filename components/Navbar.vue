@@ -81,18 +81,21 @@
 
       <!-- Basic Buttons -->
       <div class="w-full lg:w-[80%] flex justify-center lg:justify-between flex-wrap items-center gap-2">
-        <button class="inline-block transform hover:scale-105 transition" aria-label="Strefa Okazji">
-          <div class="relative">
-            <img
-              src="/images/button_red_long.png"
-              alt="Strefa Okazji"
-              class="block w-auto h-[42px] sm:h-[38px] md:h-[36px] lg:h-[34px]"
-            />
-            <span class="absolute inset-0 flex items-center justify-center text-yellow-300 font-semibold text-xs sm:text-[11px] uppercase tracking-wider">
-              Deal Zone
-            </span>
-          </div>
-        </button>
+
+        <router-link to="/search" class="block">
+          <button class="inline-block transform hover:scale-105 transition" aria-label="Strefa Okazji">
+            <div class="relative">
+              <img
+                src="/images/button_red_long.png"
+                alt="Strefa Okazji"
+                class="block w-auto h-[42px] sm:h-[38px] md:h-[36px] lg:h-[34px]"
+              />
+              <span class="absolute inset-0 flex items-center justify-center text-yellow-300 font-semibold text-xs sm:text-[11px] uppercase tracking-wider">
+                Deal Zone
+              </span>
+            </div>
+          </button>
+        </router-link>
 
         <button class="inline-block transform hover:scale-105 transition" aria-label="CyberGro Protect">
           <div class="relative">

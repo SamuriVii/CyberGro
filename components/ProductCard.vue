@@ -1,6 +1,8 @@
 <template>
-  <div class="bg-[#1a1a1a] border-2 border-[#ff413d] rounded-md p-3 text-white shadow-[0_0_10px_#ff413d40] hover:shadow-[0_0_15px_#ff413d] transition-all duration-300 group cursor-pointer">
-    
+  <div
+    @click="goToProduct"
+    class="bg-[#1a1a1a] border-2 border-[#ff413d] rounded-md p-3 text-white shadow-[0_0_10px_#ff413d40] hover:shadow-[0_0_15px_#ff413d] transition-all duration-300 group cursor-pointer"
+  >
     <!-- Image -->
     <img
       :src="image"
@@ -27,18 +29,16 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{
+  const props = defineProps<{
     image: string
     name: string
     price: string | number
     delivery: string
+    slug: string
   }>()
-</script>
 
-<style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
-
-  .font-orbitron {
-    font-family: 'Orbitron', sans-serif;
+  const router = useRouter()
+  const goToProduct = () => {
+    router.push(`/product/${props.slug}`)
   }
-</style>
+</script>

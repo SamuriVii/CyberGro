@@ -16,6 +16,7 @@
           :name="product.name"
           :price="product.price"
           :delivery="product.delivery"
+          :slug="product.slug"
         />
       </div>
     </div>
@@ -32,8 +33,14 @@
       name: string
       price: string | number
       delivery: string
+      slug: string
     }[]
   }>()
+
+  const router = useRouter()
+  const goToProduct = () => {
+    router.push(`/product/${props.slug}`)
+  }
 </script>
 
 <style scoped>
