@@ -1,6 +1,7 @@
 <!-- app.vue -->
 <template>
   <div data-atr="tenDiv">
+    <VitePwaManifest/>
     <NuxtRouteAnnouncer />
     <Navbar />
     <NuxtPage />
