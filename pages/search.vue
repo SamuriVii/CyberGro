@@ -70,14 +70,19 @@
     ...products_4.value
   ])
 
+  const categoryQuery = computed(() =>
+    (route.query.c?.toString().toLowerCase() || '')
+  )
+
   const searchQuery = computed(() =>
     (route.query.q?.toString().toLowerCase() || '')
   )
 
   const filteredProducts = computed(() =>
     allProducts.value.filter(product =>
-      product.name.toLowerCase().includes(searchQuery.value)
-    )
+        product.name.toLowerCase().includes(searchQuery.value) &&
+        (product.category == '' || categoryQuery.value == 'all categories' || product.category.toLowerCase().includes(categoryQuery.value))
+      )
   )
 
   const router = useRouter()

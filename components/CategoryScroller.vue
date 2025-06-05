@@ -7,6 +7,7 @@
         <div
           v-for="(category, index) in categories"
           :key="index"
+          @click="handleSearch(category.label)"
           class="flex flex-col items-center min-w-[90px] cursor-pointer transform hover:scale-105 transition-all duration-300"
           >
 
@@ -28,6 +29,14 @@
 </template>
 
 <script setup lang="ts">
+  import { useRouter } from 'vue-router'
+  const router = useRouter()
+  const handleSearch = (label: string) => {
+    if (label.trim().length > 0) {
+      router.push({ path: '/search', query: { c: label } })
+    }
+  }
+
   const props = defineProps<{
     categories: {
       image: string

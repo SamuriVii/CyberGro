@@ -30,12 +30,13 @@
 
         <!-- Category selector -->
         <select
+          v-model="categoryQuery"
           class="h-[50px] bg-[#1a1a1a] text-yellow-300 border border-[#3a3a3a] px-3 text-sm rounded-md
                 focus:outline-none focus:ring-2 focus:ring-[#ff413d] hover:border-[#ff413d]
                 transition-all duration-300 ease-in-out
                 appearance-none [&>*]:bg-[#1a1a1a] [&>*]:text-yellow-300 [&>*]:py-2 [&>*]:px-2 [&>*]:text-sm"
           >
-          <option disabled selected>All Categories</option>
+          <option>All Categories</option>
           <option>CyberTech</option>
           <option>Augmentations</option>
           <option>Armor & Gear</option>
@@ -60,7 +61,7 @@
 
       <!-- My Account Button -->
       <div class="w-full lg:w-auto flex justify-center lg:justify-end">
-        <button class="relative inline-block transform hover:scale-105 transition" aria-label="Account">
+        <button @click="showPopup = true" class="relative inline-block transform hover:scale-105 transition" aria-label="Account">
           <img
             src="/images/button_red_empty.png"
             alt="Account"
@@ -97,7 +98,7 @@
           </button>
         </router-link>
 
-        <button class="inline-block transform hover:scale-105 transition" aria-label="CyberGro Protect">
+        <button @click="showPopup = true" class="inline-block transform hover:scale-105 transition" aria-label="CyberGro Protect">
           <div class="relative">
             <img
               src="/images/button_red_long.png"
@@ -110,7 +111,7 @@
           </div>
         </button>
 
-        <button class="inline-block transform hover:scale-105 transition" aria-label="Gwarancja">
+        <button @click="showPopup = true" class="inline-block transform hover:scale-105 transition" aria-label="Gwarancja">
           <div class="relative">
             <img
               src="/images/button_red_long.png"
@@ -123,7 +124,7 @@
           </div>
         </button>
 
-        <button class="inline-block transform hover:scale-105 transition" aria-label="Sprzedawaj">
+        <button @click="showPopup = true" class="inline-block transform hover:scale-105 transition" aria-label="Sprzedawaj">
           <div class="relative">
             <img
               src="/images/button_red_long.png"
@@ -138,7 +139,7 @@
       </div>
 
       <!-- Premium Button -->
-      <div class="w-full lg:w-auto flex justify-center lg:justify-end">
+      <div @click="showPopup = true" class="w-full lg:w-auto flex justify-center lg:justify-end">
         <button class="inline-block transform hover:scale-110 transition" aria-label="Bądź Cyber!">
           <div class="relative">
             <img
@@ -153,6 +154,20 @@
         </button>
       </div>
     </div>
+
+    <!-- Popup Modal -->
+    <div v-if="showPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+      <div class="bg-[#1a1a1a] border border-[#ff413d] rounded-lg p-6 max-w-sm w-full text-center shadow-lg text-yellow-300">
+        <h2 class="text-sm mb-4">Currently unavailable!</h2>
+        <button
+          @click="showPopup = false"
+          class="px-4 py-2 bg-[#ff413d] text-white rounded-md hover:bg-red-600 transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>-->
+
   </header>
 </template>
 
@@ -162,11 +177,12 @@
 
   const router = useRouter()
   const searchQuery = ref('')
+  const categoryQuery = ref('')
+  const showPopup = ref(false)
+  const PopupTitle = ref('')
 
   const handleSearch = () => {
-    if (searchQuery.value.trim().length > 0) {
-      router.push({ path: '/search', query: { q: searchQuery.value } })
-    }
+  router.push({ path: '/search', query: { q: searchQuery.value, c: categoryQuery.value } })
   }
 </script>
 
