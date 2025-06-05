@@ -55,16 +55,27 @@
 <script setup lang="ts">
   import { useRoute } from 'vue-router'
   import { computed } from 'vue'
-  import { allProducts } from '@/data/products'
+  // import { allProducts } from '~/data/products'
   
   const route = useRoute()
-  
+  const { data, pending, error } = await useFetch('/api/products')
+  const products_1 = computed(() => data.value?.products_1 || [])
+  const products_2 = computed(() => data.value?.products_2 || [])
+  const products_3 = computed(() => data.value?.products_3 || [])
+  const products_4 = computed(() => data.value?.products_4 || [])
+  const allProducts = computed(() => [
+    ...products_1.value,
+    ...products_2.value,
+    ...products_3.value,
+    ...products_4.value
+  ])
+
   const searchQuery = computed(() =>
     (route.query.q?.toString().toLowerCase() || '')
   )
-  
+
   const filteredProducts = computed(() =>
-    allProducts.filter(product =>
+    allProducts.value.filter(product =>
       product.name.toLowerCase().includes(searchQuery.value)
     )
   )
@@ -74,4 +85,3 @@
     router.push(`/product/${slug}`)
   }
 </script>
-  
