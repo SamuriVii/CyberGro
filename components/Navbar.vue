@@ -98,6 +98,21 @@
           </button>
         </router-link>
 
+        <router-link to="/wishlist" class="block">
+          <button class="inline-block transform hover:scale-105 transition" aria-label="Strefa Okazji">
+            <div class="relative">
+              <img
+                src="/images/button_red_long.png"
+                alt="Strefa Okazji"
+                class="block w-auto h-[42px] sm:h-[38px] md:h-[36px] lg:h-[34px]"
+              />
+              <span class="absolute inset-0 flex items-center justify-center text-yellow-300 font-semibold text-xs sm:text-[11px] uppercase tracking-wider">
+                Wishlisted
+              </span>
+            </div>
+          </button>
+        </router-link>
+
         <button @click="showPopup = true" class="inline-block transform hover:scale-105 transition" aria-label="CyberGro Protect">
           <div class="relative">
             <img

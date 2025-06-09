@@ -41,14 +41,18 @@
     
                 <!-- Przycisk -->
                 <div class="flex flex-col gap-3 items-center pt-4">
-                    <button class="relative inline-block transform hover:scale-105 transition w-[160px]" aria-label="Add to Wishlist">
+                    <button 
+                        class="relative inline-block transform hover:scale-105 transition w-[160px]"
+                        :aria-label="isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'"
+                        @click.stop="toggleWishlist"
+                    >
                         <img
-                            src="/images/button_red_empty.png"
+                            :src="'/images/button_red_empty.png'"
                             alt="Wishlist"
                             class="block w-full h-[48px]"
                         />
                         <span class="absolute inset-0 flex items-center justify-center text-[#ff413d] font-bold text-2xl leading-none">
-                            ♡
+                            {{ isWishlisted ? '♥' : '♡' }}
                         </span>
                     </button>
         
@@ -71,12 +75,28 @@
   
 <script setup lang="ts">
     import { useRoute } from 'vue-router'
+    import { ref, computed } from 'vue'
+
     const { data, pending, error } = await useFetch('/api/products')
     const products = computed(() => data.value?.products || [])
 
     const route = useRoute()
     const slug = route.params.slug as string
     const product = products.value.find(p => p.slug === slug)
+
+    // Wishlist logic
+    const wishlist = ref<string[]>(JSON.parse(localStorage.getItem('wishlist') || '[]'))
+    const isWishlisted = computed(() => product && wishlist.value.includes(product.slug))
+    function toggleWishlist() {
+      if (!product) return
+      const idx = wishlist.value.indexOf(product.slug)
+      if (idx === -1) {
+        wishlist.value.push(product.slug)
+      } else {
+        wishlist.value.splice(idx, 1)
+      }
+      localStorage.setItem('wishlist', JSON.stringify(wishlist.value))
+    }
 </script>
   
 <style scoped>
@@ -85,4 +105,3 @@
     font-family: 'Orbitron', sans-serif;
   }
 </style>
-  
