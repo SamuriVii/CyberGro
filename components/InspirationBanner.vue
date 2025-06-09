@@ -11,7 +11,7 @@
       <!-- Banner List -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         <div
-          v-for="(item, index) in items"
+          v-for="(item, index) in inspirations"
           :key="index"
           class="relative rounded-md overflow-hidden transform hover:scale-105 transition duration-300 shadow-[0_0_10px_#ff413d]"
           >
@@ -29,12 +29,8 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{
-    items: {
-      image: string
-      title: string
-    }[]
-  }>()
+  const { data, error } = await useFetch('/api/inspirations')
+  const inspirations = computed(() => data.value?.inspirations || [])
 </script>
 
 <style scoped>

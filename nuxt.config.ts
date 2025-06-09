@@ -19,9 +19,9 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Nuxt 3 PWA',
-      short_name: 'NuxtPWA',
-      description: 'A Nuxt 3 Progressive Web App',
+      name: 'CyberGro - Cyberpunk Marketplace',
+      short_name: 'CyberGro',
+      description: 'Explore the future of cyberpunk tech and gear',
       theme_color: '#4A90E2',
       icons: [
         {

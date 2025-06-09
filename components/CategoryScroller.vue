@@ -36,13 +36,9 @@
       router.push({ path: '/search', query: { c: label } })
     }
   }
+  const { data, error } = await useFetch('/api/categories')
+  const categories = computed(() => data.value?.categories || [])
 
-  const props = defineProps<{
-    categories: {
-      image: string
-      label: string
-    }[]
-  }>()
 </script>
 
 <style scoped>

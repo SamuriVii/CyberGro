@@ -166,7 +166,7 @@
           Close
         </button>
       </div>
-    </div>-->
+    </div>
 
   </header>
 </template>
@@ -179,7 +179,6 @@
   const searchQuery = ref('')
   const categoryQuery = ref('')
   const showPopup = ref(false)
-  const PopupTitle = ref('')
 
   const handleSearch = () => {
   router.push({ path: '/search', query: { q: searchQuery.value, c: categoryQuery.value } })
